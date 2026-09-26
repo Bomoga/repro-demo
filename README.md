@@ -2,7 +2,8 @@
 
 A deliberately vulnerable demo target for [Repro](https://github.com/Bomoga/repro): a small notes
 app with an AI assistant, with planted issues for Repro to detect, reproduce, repair, and prove
-fixed. [SEEDED_ISSUES.md](SEEDED_ISSUES.md) lists every one.
+fixed. The list of planted issues is kept with the Repro team, outside this repo, so Repro's
+agents work from the code alone.
 
 **Don't deploy this.** The API keys and secrets in it are fake (random values, never valid
 anywhere), and the third-party hosts are reserved `.example` and `.test` domains.
