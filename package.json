@@ -1,8 +1,14 @@
 {
-  "name": "demo-notes-assistant",
+  "name": "notewise",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test": "node --test \"test/**/*.test.js\" && python3 -m unittest discover -s api/tests -t ."
+    "start": "node src/server.js",
+    "start:api": "python3 -m api.dev_server",
+    "test": "node --test \"test/*.test.js\" && python3 -m unittest discover -s api/tests -t ."
+  },
+  "description": "Notewise: notes with an AI assistant. A deliberately vulnerable demo target for Repro.",
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }
