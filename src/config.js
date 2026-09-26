@@ -2,6 +2,9 @@
 
 module.exports = {
   providerUrl: 'https://api.example-llm.test/v1/chat',
-  OPENAI_API_KEY: 'sk-demo-9f2c4e7a1b3d5f6e8a0c2e4f6a8b0d1c',
+  // FAKE: a random value generated for this demo repo. It has never been a valid key anywhere.
+  OPENAI_API_KEY: '8307c1cadcd80247d691da88b17169cdf7b8e641',
   model: 'demo-chat-1',
+  notesApiUrl: process.env.NOTES_API_URL || 'http://localhost:8000',
+  port: Number(process.env.PORT) || 3000,
 };
