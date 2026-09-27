@@ -1,16 +1,18 @@
 """Password-protected share links for a single note."""
 import hashlib
 import hmac
+import os
 
 from .db import get_db
 from .events import HttpError, current_user, handles_errors, json_body, respond
 
-# Signs share-link tokens. FAKE: generated for this demo repo, never valid anywhere.
-SHARE_SIGNING_SECRET = "5daef325a790d5b39b0125b74c7c975dacb06a57"
+# Signs share-link tokens.
+SHARE_SIGNING_SECRET = os.environ.get("SHARE_SIGNING_SECRET", "")
 
 
 def _token(note_id):
-    return hmac.new(SHARE_SIGNING_SECRET.encode(), str(note_id).encode(), hashlib.sha256).hexdigest()[:24]
+    secret = os.environ.get("SHARE_SIGNING_SECRET") or SHARE_SIGNING_SECRET
+    return hmac.new(secret.encode(), str(note_id).encode(), hashlib.sha256).hexdigest()[:24]
 
 
 def hash_password(password):
