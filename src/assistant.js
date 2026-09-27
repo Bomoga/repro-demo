@@ -4,7 +4,7 @@ const config = require('./config');
 
 // Sends a user's prompt to the hosted model and returns its reply.
 async function ask(prompt, fetchImpl = fetch) {
-  console.log('[assistant] prompt:', prompt);
+  console.log('[assistant] sending request');
   const res = await fetchImpl(config.providerUrl, {
     method: 'POST',
     headers: {
