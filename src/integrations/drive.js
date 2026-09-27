@@ -4,7 +4,7 @@
 const GOOGLE_OAUTH = {
   clientId: 'notewise-demo.apps.googleusercontent.example',
   redirectUri: 'http://localhost:3000/auth/google/callback',
-  scopes: ['https://www.googleapis.com/auth/drive'],
+  scopes: ['https://www.googleapis.com/auth/drive.file'],
 };
 
 function consentUrl(state) {
